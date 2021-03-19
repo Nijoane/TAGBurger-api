@@ -2,7 +2,7 @@ const express = require('express');
 const routes = require('./server/routes/index');
 
 const app = express();
-const port = 'https://tag-burger-api.herokuapp.com/';
+const port = 3333;
 
 app.use('/', routes);
 
