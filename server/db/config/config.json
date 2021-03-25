@@ -9,9 +9,14 @@
       "ssl": {
         "require": true,
         "rejectUnauthorized": false
+      },
+      "define": {
+        "timestamps": true,
+        "underscored": true
       }
     }
   },
+
   "test": {
     "username": "bpdkoegdffuneo",
     "password": "e91e35cbf226371b35a71d39748ce685f1ce4d0b7221dd34fb9d1aa49a839b91",
@@ -22,6 +27,10 @@
       "ssl": {
         "require": true,
         "rejectUnauthorized": false
+      },
+      "define": {
+        "timestamps": true,
+        "underscored": true
       }
     }
   },
@@ -35,6 +44,10 @@
       "ssl": {
         "require": true,
         "rejectUnauthorized": false
+      },
+      "define": {
+        "timestamps": true,
+        "underscored": true
       }
     }
   }
