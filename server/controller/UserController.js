@@ -7,7 +7,7 @@ module.exports = {
     return response.json(users);
   },
 
-  async byUid(request, response){
+  async getbyUid(request, response){
 
     const users = await models.Users.findAll({
       where: 
@@ -30,5 +30,33 @@ module.exports = {
     })
 
     return response.json(user);
+  },
+
+  async userUpdate(request, response){
+    const {id, name, email, password, role, restaurant } = request.body;
+    const users = await models.Users.update(
+      { 
+        id,
+        name, 
+        email, 
+        password, 
+        role, 
+        restaurant 
+      },
+      {
+        where:
+        { id: request.params.id }
+      } 
+    )
+    return response.json(users);
+  },
+
+  async userDelete(request, response){
+    const users = await models.Users.destroy({
+      where:
+      { id: request.params.id}
+    }); 
+
+    return response.json(users);
   }
 }
