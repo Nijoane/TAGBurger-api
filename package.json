@@ -4,7 +4,7 @@
   "description": "## 1. Preâmbulo",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server/server.js",
+    "start": "nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "git+https://github.com/Laboratoria/SAP005-burger-queen-api.git",
