@@ -2,9 +2,14 @@ const models = require('../db/models');
 
 module.exports = { 
   async get(request, response){
-    const users = await models.Users.findAll();
+    try{
+      const users = await models.Users.findAll();
 
-    return response.json(users);
+      return response.status(200).json(users);
+    } catch (error){
+      return response.status(400).json({ message: error.message });
+    }
+
   },
 
   async getbyUid(request, response){
@@ -13,7 +18,7 @@ module.exports = {
       where: 
         { id: request.params.id },
     })
-    return response.json(users);
+    return response.status(200).json(users);
   },
 
   async create(request, response){
@@ -29,7 +34,7 @@ module.exports = {
       updatedAt: new Date()
     })
 
-    return response.json(user);
+    return response.status(200).json(user);
   },
 
   async userUpdate(request, response){
@@ -48,7 +53,7 @@ module.exports = {
         { id: request.params.id }
       } 
     )
-    return response.json(users);
+    return response.status(200).json(users);
   },
 
   async userDelete(request, response){
@@ -57,6 +62,6 @@ module.exports = {
       { id: request.params.id}
     }); 
 
-    return response.json(users);
+    return response.status(200).json(users);
   }
 }
